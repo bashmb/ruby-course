@@ -94,3 +94,23 @@ describe 'Exercise 9' do
     result.should == true
   end
 end
+
+# describe 'Exercise 10' do
+#   xit "Returns 'happy hour' if it is between 4 and 6pm" do
+#     result = Exercises.ex10(Time.now())
+#     result.should == 
+
+describe 'Exercise 11' do
+  it "Returns the sum if both arguments are integers" do
+    result = Exercises.ex11(2,3) 
+    result.should == 5
+  end
+  # it "Gives an error if both are not integers" do
+  #   result = Exercises.ex11(2.34, 3.35)
+  #   result.should == "RuntimeError: Both of these is not an integer"
+  # end
+  # it "Returns an error if one of these is not an integer." do
+  #   result = Exercises.ex11(2.34,3)
+  #   result.should == "One of these is not an integer"
+  # end
+end

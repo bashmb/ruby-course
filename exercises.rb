@@ -84,22 +84,35 @@ module Exercises
     else
       return false
     end
-    
+
   end
 
   # Exercise 10
   #  - Returns "happy hour" if it is between 4 and 6pm
   #    Otherwise, returns "normal prices"
   # Hint: Read the "Stubbing" documentation on the Learn app.
-  def self.ex10
-    # TODO
-  end
+  # def self.ex10
+  #   my_time = Time.now
+  #   allow(Time).to receive(Time.now).and_return(my_time)
+  #   if my_time [16:00..18:00]
+  #     return "Happy Hour"
+  #   else
+  #     return "Normal Prices"
+  #   end
+  # end
   
   # Exercise 11
   #  - Returns the sum of two numbers if they are both integers
   #  - Raises an error if both numbers are not integers
-  def self.ex11
-    # TODO
+  def self.ex11(num1, num2)
+    if ((num1.is_a? Integer) && (num2.is_a? Integer))
+      sum = num1 + num2
+      return sum   
+    elsif ((!num1.is_a? Integer) && (!num2.is_a? Integer))
+      raise("Both of these is not an integer")
+    else
+      raise("One of these is not an integer")
+    end
   end
   
   # Exercise 12
