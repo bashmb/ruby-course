@@ -60,3 +60,16 @@ describe 'Exercises 5' do
   end
 end
 
+describe 'Exercise 6' do
+  it "Updates the last item in the array to 'panda'" do
+    result = Exercises.ex6(["dog", "cat", "fish"])
+    test_element = result[2]
+    test_element.should == "panda"
+  end
+
+  it "Changes the last element to 'GODZILLA' if already = to 'panda'" do
+    result = Exercises.ex6(["dog", "cat", "panda"])
+    test_element = result[2]
+    test_element.should == "GODZILLA"
+  end
+end
