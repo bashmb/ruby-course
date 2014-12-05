@@ -114,3 +114,10 @@ describe 'Exercise 11' do
   #   result.should == "One of these is not an integer"
   # end
 end
+
+describe 'Exercise 12' do
+  it 'Prints all the letters in order between two given letters' do
+    result = Exercises.ex12('x','r')
+    result.should == ["r", "s", "t", "u", "v", "w", "x"]
+  end
+end
