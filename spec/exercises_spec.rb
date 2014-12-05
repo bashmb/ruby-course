@@ -80,3 +80,17 @@ describe 'Exercise 7' do
     result.should == "cat"
   end
 end
+
+describe 'Exercise 8' do
+  it "Iterates through `people` and prints out their name and occupation" do
+    result = capture_stdout{ Exercises.ex8([{name: 'bob', occupation: 'builder'}])}
+    result.should == "name: bob occupation: builder\n"
+  end
+end
+
+describe 'Exercise 9' do
+  it "Returns `true` if the given time is in a leap year" do
+    result = Exercises.ex9(2000)
+    result.should == true
+  end
+end
