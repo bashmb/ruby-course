@@ -1,6 +1,18 @@
 require 'spec_helper'
 require './exercises.rb'
 
+def capture_stdout(&block)
+    original_stdout = $stdout
+    $stdout = fake = StringIO.new
+    begin
+      yield
+    ensure
+      $stdout = original_stdout
+    end
+    fake.string
+  end
+
+
 describe 'Exercise 0' do
   it "triples the length of a string" do
     result = Exercises.ex0("ha")
@@ -40,3 +52,11 @@ describe 'Exerciese 4' do
     expect(result).to eq(3)
   end
 end
+
+describe 'Exercises 5' do
+  it "Iterates through an array and `puts` each element" do
+    result = capture_stdout{ Exercises.ex5([1,2,3,4,5,6,7,8,9,10])}
+    result.should == "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n"
+  end
+end
+
