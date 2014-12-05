@@ -73,3 +73,10 @@ describe 'Exercise 6' do
     test_element.should == "GODZILLA"
   end
 end
+
+describe 'Exercise 7' do
+  it "If the string `str` exists in the array, add `str` to the end of the array" do
+    result = Exercises.ex7(["dog", "cat", "fish", "str"], "cat")
+    result.should == "cat"
+  end
+end
