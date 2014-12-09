@@ -3,7 +3,8 @@
 
 <ul>
   <% @albums.each do |album| %>
-    <li><%= album['title'] %></li>
+  	<% album_id = album['id'] %>
+    <li><a href="/albums/<%= album['id'] %>"><%= album['title'] %> ()</a></li>
   <% end %>
 </ul>
 

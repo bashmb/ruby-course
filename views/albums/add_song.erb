@@ -1,0 +1,12 @@
+<h1> <%= @album_title["title"] %> </h1>
+<% @song_list.each do |song| %>
+<li><%= song["title"] %></li>
+<% end %>
+<br>
+<br>
+<br>
+
+<form name="song_data" method="post" action="/add_song">
+New Song Name:  <input type="text" name="title">
+<input type="hidden" name="album_id" value="<%= @album_title["id"] %>">
+<input type="submit" value="submit">

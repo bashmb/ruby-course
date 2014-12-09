@@ -23,6 +23,11 @@ module Songify
       end
     end
 
+    # def self.album_song_count (db, album_id)
+    #     result = db.exec("SELECT COUNT(*) FROM songs WHERE album_id = $1 GROUP BY album_id", [album_id]).to_a
+    # end
+
+
     def self.destroy(db, album_id)
       # TODO: Delete SQL statement
       #  ALSO DELETE SONGS
