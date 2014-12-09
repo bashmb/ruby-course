@@ -46,8 +46,8 @@ post '/add_song' do
   db = Songify.create_db_connection('songify_dev')
   @new_song = Songify::SongRepo.add(db, @song_data)
   goto = params[:albumID]
-  album_id = params[:album_id]
-  redirect :"/albums"
+
+  redirect :"/albums/#{params[:album_id]}"
 end
 
 

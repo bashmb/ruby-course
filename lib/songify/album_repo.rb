@@ -18,7 +18,12 @@ module Songify
       else
         raise "title is required." if album_data['title'].nil? || album_data['title'] == ''
         result = db.exec("INSERT INTO albums (title) VALUES ($1) RETURNING id", [album_data['title']])
-        album_data['id'] = result.entries.first['id']
+        album_data['id'] = result.entries.first['id']        
+        album_data['genre_ids'].each do |x|
+          g_result = db.exec("INSERT INTO album_genres (album_id, genre_id) RETURNING id VALUES ($1, $2)", [x, album_data['id'])
+        end
+
+
         album_data
       end
     end
