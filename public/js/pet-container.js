@@ -22,9 +22,11 @@
       content = m('h3', "Please sign in first.")
     }
 
-    return m('.pet-container', [
+    return m( "div", [
+    m('.pet-container', [
       m('h1', "Your Pet Container"),
       content
+    ])
     ])
   }
 

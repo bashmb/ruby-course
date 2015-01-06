@@ -15,8 +15,8 @@ before do
   if session[:user_id]
     # TODO: Grab user from database
     db = PetShopServer.create_db_connection 'petshop'
-    @current_user = PetShopServer::PetsRepo.build_user(db, session[:user_id])
-    # @current_user = PetshopServer::PetsRepo.find
+    user = PetShopServer::UsersRepo.find(db, session[:user_id])
+    #@current_user
   end
 end
 # #
@@ -27,7 +27,8 @@ get '/' do
   # @current_user = PetShopServer::UsersRepo.find(db, session[:user_id])
   
   # puts PetShopServer::PetsRepo.build_user(db, 999)
-  @real_user.to_json
+  #@real_user.to_json
+  @current_user
   erb :index
 end
 
@@ -62,10 +63,12 @@ post '/signin' do
     headers['Content-Type'] = 'application/json'
     # TODO: Return all pets adopted by this user
     # TODO: Set session[:user_id] so the server will remember this user has logged in
-    @real_user = PetShopServer::PetsRepo.build_user(db, user['id'])
-    @real_user.to_json
-
     session["user_id"] = user['id']
+
+    @current_user = PetShopServer::PetsRepo.build_user(db, user['id'])
+    @current_user.to_json
+
+    
   else
     status 401
   end
