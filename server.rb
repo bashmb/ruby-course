@@ -3,6 +3,7 @@ require 'sinatra/reloader'
 require 'rest-client'
 require 'pg'
 require 'json'
+require 'config/environments.rb'
 
 require_relative 'lib/pet-shop-server/petshop.rb'
 
