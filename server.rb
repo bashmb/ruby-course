@@ -5,6 +5,7 @@ require 'pg'
 require 'json'
 
 require_relative 'lib/pet-shop-server/petshop.rb'
+require_relative "config/environments.rb"
 
 configure do
   enable :sessions
