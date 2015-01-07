@@ -1,5 +1,5 @@
 module AR
-  class Shop < ActiveRecord:Base
+  class Petshop < ActiveRecord::Base
     has_many :pets
     has_many :users
   end
