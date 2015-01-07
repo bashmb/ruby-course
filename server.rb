@@ -3,9 +3,12 @@ require 'sinatra/reloader'
 require 'rest-client'
 require 'pg'
 require 'json'
+# require "active_record"
+# require 'active_record_tasks'
+#require "config/environments.rb"
 
 require_relative 'lib/pet-shop-server/petshop.rb'
-require_relative "config/environments.rb"
+require_relative 'config/environments.rb'
 
 configure do
   enable :sessions
@@ -54,7 +57,8 @@ post '/signin' do
   password = params['password']
 
   db = PetShopServer.create_db_connection 'petshop'
-  user = PetShopServer::UsersRepo.find_by_name(db, username)
+  #user = PetShopServer::UsersRepo.find_by_name(db, username)
+  user = AR::User.find_by username: username
 
   # TODO: Grab user by username from database and check password
 
